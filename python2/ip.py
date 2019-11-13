@@ -8,14 +8,14 @@ from __future__ import print_function
 from subprocess import Popen, PIPE
 import re
 
-from waveshare import DisplayText
-from waveshare import EPaper
-from waveshare import Handshake
-from waveshare import RefreshAndUpdate
-from waveshare import SetEnFontSize
-from waveshare import SetZhFontSize
-from waveshare import SetPallet
-from waveshare import ClearScreen
+from python2.waveshare import DisplayText
+from python2.waveshare import EPaper
+from python2.waveshare import Handshake
+from python2.waveshare import RefreshAndUpdate
+from python2.waveshare import SetEnFontSize
+from python2.waveshare import SetZhFontSize
+from python2.waveshare import SetPallet
+from python2.waveshare import ClearScreen
 
 
 IFACE_NUM_KEY = 'iface_num'

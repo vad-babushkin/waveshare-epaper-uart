@@ -16,13 +16,12 @@ The PI must have the serial GPIO pins enabled (enable_uart=1 in
 import random
 from time import sleep
 
-import RPi.GPIO as GPIO
-from waveshare import DisplayText
-from waveshare import EPaper
-from waveshare import RefreshAndUpdate
-from waveshare import SetEnFontSize
-from waveshare import SetZhFontSize
-from waveshare import ClearScreen
+from python2.waveshare import DisplayText
+from python2.waveshare import EPaper
+from python2.waveshare import RefreshAndUpdate
+from python2.waveshare import SetEnFontSize
+from python2.waveshare import SetZhFontSize
+from python2.waveshare import ClearScreen
 
 def hello_world(paper):
     '''

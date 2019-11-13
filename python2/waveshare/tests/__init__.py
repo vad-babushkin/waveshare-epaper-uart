@@ -15,24 +15,24 @@ so no display needs to be hooked up.
 # pylint: disable=line-too-long
 
 import unittest
-from waveshare import Handshake
-from waveshare import SetBaudrate
-from waveshare import ReadBaudrate
-from waveshare import ReadStorageMode
-from waveshare import SetStorageMode
-from waveshare import SleepMode
-from waveshare import RefreshAndUpdate
-from waveshare import CurrentDisplayRotation
-from waveshare import SetCurrentDisplayRotation
-from waveshare import ImportFontLibrary
-from waveshare import ImportImage
-from waveshare import DrawCircle
-from waveshare import FillCircle
-from waveshare import DrawTriangle
-from waveshare import FillTriangle
-from waveshare import ClearScreen
-from waveshare import DisplayText
-from waveshare import DisplayImage
+from python2.waveshare import Handshake
+from python2.waveshare import SetBaudrate
+from python2.waveshare import ReadBaudrate
+from python2.waveshare import ReadStorageMode
+from python2.waveshare import SetStorageMode
+from python2.waveshare import SleepMode
+from python2.waveshare import RefreshAndUpdate
+from python2.waveshare import CurrentDisplayRotation
+from python2.waveshare import SetCurrentDisplayRotation
+from python2.waveshare import ImportFontLibrary
+from python2.waveshare import ImportImage
+from python2.waveshare import DrawCircle
+from python2.waveshare import FillCircle
+from python2.waveshare import DrawTriangle
+from python2.waveshare import FillTriangle
+from python2.waveshare import ClearScreen
+from python2.waveshare import DisplayText
+from python2.waveshare import DisplayImage
 
 MISMATCH = u"Values didn't match: \nactual:   %s \nexpected: %s"
 
