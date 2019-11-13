@@ -22,6 +22,7 @@ from waveshare import EPaper
 from waveshare import RefreshAndUpdate
 from waveshare import SetEnFontSize
 from waveshare import SetZhFontSize
+from waveshare import ClearScreen
 
 def hello_world(paper):
     '''
@@ -30,6 +31,7 @@ def hello_world(paper):
     x_pool = [_ for _ in xrange(0, 800, 32)]
     y_pool = [_ for _ in xrange(0, 800, 32)]
     greets = [_.encode('gb2312') for _ in [u'你好', u'hello', u'hi', u'salut', u'hola', u'Здравствуйте', u'Привет', u'Kamusta', u'こんにちは']] #pylint: disable=line-too-long
+    paper.send(ClearScreen())
     e_sizes = [SetEnFontSize.THIRTYTWO, SetEnFontSize.FOURTYEIGHT, SetEnFontSize.SIXTYFOUR] #pylint: disable=line-too-long
     z_sizes = [SetZhFontSize.THIRTYTWO, SetZhFontSize.FOURTYEIGHT, SetZhFontSize.SIXTYFOUR] #pylint: disable=line-too-long
     for _ in xrange(0, 10):
@@ -42,7 +44,7 @@ def main():
     '''
     Runs through a few example uses of the connected display.
     '''
-    with EPaper('/dev/ttyAMA0') as paper:
+    with EPaper('/dev/ttyS1') as paper:
         sleep(5)
         hello_world(paper)
         sleep(2)

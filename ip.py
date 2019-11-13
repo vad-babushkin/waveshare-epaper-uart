@@ -15,6 +15,7 @@ from waveshare import RefreshAndUpdate
 from waveshare import SetEnFontSize
 from waveshare import SetZhFontSize
 from waveshare import SetPallet
+from waveshare import ClearScreen
 
 
 IFACE_NUM_KEY = 'iface_num'
@@ -61,7 +62,7 @@ def write_line(paper, line, static={}): #pylint: disable=dangerous-default-value
     '''
     Write a line of text to the epaper display.
     '''
-    font_size = 32
+    font_size = 64
     if not static:
         static[LAST_LINE] = 1
     line_count = static[LAST_LINE]
@@ -83,12 +84,13 @@ def main():
     Run the logic for getting local IP addresses, then write them to the EInk
     display (and stdout).
     '''
-    with EPaper('/dev/ttyAMA0') as paper:
+    with EPaper('/dev/ttyS1') as paper:
         paper.send(Handshake())
+        paper.send(ClearScreen())
         wait_for_paper(paper)
         paper.send(SetPallet(SetPallet.BLACK, SetPallet.WHITE))
-        paper.send(SetEnFontSize(SetEnFontSize.THIRTYTWO))
-        paper.send(SetZhFontSize(SetZhFontSize.THIRTYTWO))
+        paper.send(SetEnFontSize(SetEnFontSize.SIXTYFOUR))
+        paper.send(SetZhFontSize(SetZhFontSize.SIXTYFOUR))
         print('Interfaces:')
         write_line(paper, 'Interfaces:')
         for entry in get_ip_addresses():

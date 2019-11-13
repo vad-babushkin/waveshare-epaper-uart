@@ -438,10 +438,14 @@ class EPaper(object):
 
 if __name__ == "__main__":
     try:
-        paper = EPaper('/dev/ttyAMA0')
+        paper = EPaper('/dev/ttyS1')
         print('Handshake')
         paper.send(Handshake())
         print(paper.read(2))
+
+        paper.send(ClearScreen())
+
+        paper.send(SetZhFontSize(SetZhFontSize.THIRTYTWO))
         paper.send(DisplayText(10,10, u'你好, World'.encode('gb2312')))
         print('Hello World 1')
         print(paper.read(2))
@@ -460,7 +464,7 @@ if __name__ == "__main__":
         print('Setting pallet to LIGHT_GRAY/white')
         paper.send(SetPallet(SetPallet.LIGHT_GRAY))
         print(paper.read(2))
-        paper.send(DisplayText(240, 240, u'привет, World'.encode('gb2312')))
+        paper.send(DisplayText(240, 0, u'Здравствуй, Мiр!'.encode('gb2312')))
         print('Hello World 4')
         print(paper.read(2))
         paper.update()
